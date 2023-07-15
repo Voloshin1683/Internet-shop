@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" rel="stylesheet"> 
+  <title>Мій магазин</title>
+  
+</head>
+<body>
+   
+
+   
+   
+
+  <main>
+    <div id="myNav" class="overlay">
+
+       
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      
+        
+        <div class="overlay-content">
+          <a href="#">Категорії</a>
+          <a href="#">Services</a>
+          <a href="#">Clients</a>
+          <a href="#">Contact</a>
+        </div>
+      
+      </div>
+      <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "14%";
+        }
+        
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+        </script>
+      
+      
+      <span onclick="openNav()">/ / /</span>
+    <header>
+       
+        <div class="logo">
+          <img src="logo.png" alt="Логотип магазина">
+        </div>
+       
+        
+        
+        
+      </header>
+    <section id="products">
+     
+      <h2>Продукты</h2>
+  
+      <div class="product">
+        <img src="product1.jpg" alt="Product 1">
+        <h3>Название продукта 1</h3>
+        <p>Цена: $10</p>
+        <button class="add-to-cart">Добавить в корзину</button>
+      </div>
+  
+      <div class="product">
+        <img src="product2.jpg" alt="Product 2">
+        <h3>Название продукта 2</h3>
+        <p>Цена: $15</p>
+        <button class="add-to-cart">Добавить в корзину</button>
+      </div>
+  
+      <div class="product">
+        <img src="product3.jpg" alt="Product 3">
+        <h3>Название продукта 3</h3>
+        <p>Цена: $20</p>
+        <button class="add-to-cart">Добавить в корзину</button>
+      </div>
+      
+    </section>
+
+    <section id="cart">
+     
+      <h2>Корзина</h2>
+  
+      <div class="cart-item">
+        <img src="product1.jpg" alt="Product 1">
+        <h3>Название продукта 1</h3>
+        <p>Цена: $10</p>
+        <p>Количество: 2</p>
+      </div>
+  
+      <div class="cart-item">
+        <img src="product2.jpg" alt="Product 2">
+        <h3>Название продукта 2</h3>
+        <p>Цена: $15</p>
+        <p>Количество: 1</p>
+      </div>
+  
+      <div class="cart-item">
+        <img src="product3.jpg" alt="Product 3">
+        <h3>Название продукта 3</h3>
+        <p>Цена: $20</p>
+        <p>Количество: 3</p>
+      </div>
+  
+      <button class="checkout-button">Оформить заказ</button>
+      
+    </section>
+  </main>
+
+  <footer>
+    <p>Мой интернет-магазин &copy; 2023. Все права защищены.</p>
+    <nav>
+      <ul>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Условия использования</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
