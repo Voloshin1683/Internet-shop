@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" rel="stylesheet"> 
+  <title>Мій магазин</title>
+  
+</head>
+<body>
+   
+
+   
+   
+
+  <main>
+    <div id="myNavLeft" class="overlay overlay-left">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNavLeft()">×</a>
+      <div class="overlay-content">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    
+    <div id="myNavRight" class="overlay overlay-right">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">×</a>
+      <div class="overlay-content">
+        <div class="cart-item">
+          <img src="img/whitetea.png" alt="Product 1">
+          <h3>Название продукта 1</h3>
+          <p>Цена: $10</p>
+          <p>Количество: 2</p>
+        </div>
+    
+        <div class="cart-item">
+          <img src="product2.jpg" alt="Product 2">
+          <h3>Название продукта 2</h3>
+          <p>Цена: $15</p>
+          <p>Количество: 1</p>
+        </div>
+    
+        <div class="cart-item">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>Название продукта 3</h3>
+          <p>Цена: $20</p>
+          <p>Количество: 3</p>
+        </div>
+        <button class="checkout-button">Оформить заказ</button>
+      </div>
+    </div>
+    
+    
+    
+    <span class="openbtn openbtn-left" onclick="openNavLeft()"><img src="img/logo.png" alt="Логотип магазина"> </span>
+    <span class="openbtn openbtn-right" onclick="openNavRight()"><img src="img/basket.svg" alt="Кошик"></span>
+    
+    <script >function openNavLeft() {
+      document.getElementById("myNavLeft").style.width = "252px";
+  }
+  
+  function closeNavLeft() {
+      document.getElementById("myNavLeft").style.width = "0%";
+  }
+  
+  function openNavRight() {
+      document.getElementById("myNavRight").style.width = "18%";
+  }
+  
+  function closeNavRight() {
+      document.getElementById("myNavRight").style.width = "0%";
+  }</script>
+    <header>
+       
+        
+       
+        
+        
+        
+      </header>
+    <section id="products">
+     
+    
+  
+      <div class="product">
+        <img src="img/whitetea.png" alt="Product 1">
+
+        <h3>Чай білий “Тікспай”</h3>
+        <p>Ціна:169UAH|100g</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+     
+      <div class="product">
+        <img src="img/greentea.png" alt="Product 2">
+        <h3>Чай зелений з манго</h3>
+        <p>Ціна:129UAH|100g</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+  
+      <div class="product">
+        <img src="img/жовтий чай.png" alt="Product 3">
+        <h3>Чай жовтий “Сонячний”</h3>
+        <p>Ціна:139UAH|100g</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+      
+
+  </main>
+
+  <footer>
+    <p>Мій інтернет магазик &copy; 2023. Всі права захищені.</p>
+    <nav>
+      <ul>
+        <li><a href="#">Про нас</a></li>
+        <li><a href="#">Правила користування</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
