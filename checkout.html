@@ -1,3 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" rel="stylesheet"> 
+    <script src="cart.js"></script>
+
+    <title>Оформлення замовлення</title>
+</head>
+<main>
+    <div id="cartItemsContainer"></div>
+    
+</main>
+
+<header>
+  <div class="golovna">
+    <a href="index.html"> <img src="img/головна.png" alt="головна"></a>  </div>
+</header>
+
+<body>
+   <form>
+    <h1>Оформлення замовлення</h1>
+    
+        <label for="name">Ім'я:</label>
+        <input type="text" id="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        
+        <label for="address">Адреса доставки:</label>
+        <input type="text" id="address" required>
+        
+        <button type="submit">Підтвердити замовлення</button>
+    </form>
+
+    
+</body>
+  <title>Мій магазин</title>
+  
+</head>
+<body>
+   
+  <main>
+    <div id="myNavLeft" class="overlay overlay-left">
+      <b href="javascript:void(0)" class="closebtn" onclick="closeNavLeft()">×</b>
+      <div class="overlay-content">
+        <h3>МЕНЮ</h3>
+        <a href="#">Сорти</a>
+        <a href="#">Про нас</a>
+        <a href="#">Аксесуари</a>
+      </div>
+    </div>
+    
+    
+      </div>
+    </div>
+    
+    <span class="openbtn openbtn-left" onclick="openNavLeft()"><img src="img/logo.png" alt="Логотип магазина"> </span>
+    
+    
+    <script>
+      function openNavLeft() {
+        document.getElementById("myNavLeft").style.width = "252px";
+      }
+      
+      function closeNavLeft() {
+        document.getElementById("myNavLeft").style.width = "0%";
+      }
+     
+
+
+    </script>
+    <div id="cartItemsContainer"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    restoreCartFromLocalStorage();
+    displayCartItems();
+  });
+
+  function displayCartItems() {
+    var cartItemsContainer = document.getElementById('cartItemsContainer');
+    cartItemsContainer.innerHTML = '';
+
+    cartItems.forEach(function (item, index) {
+      var cartItem = document.createElement('div');
+      cartItem.classList.add('cart-item');
+
+      cartItem.innerHTML = `
+        <img src="${item.imageSrc}" alt="Product">
+        <h3>${item.name}</h3>
+        <p>${item.price}</p>
+        <p>${item.quantity} шт</p>
+        <button class="increase-button" onclick="increaseQuantity(${index})">+</button>
+        <button class="decrease-button" onclick="decreaseQuantity(${index})">-</button>
+        <button class="remove-button" onclick="removeFromCart(${index})">Видалити</button>
+      `;
+
+      cartItemsContainer.appendChild(cartItem);
+    });
+  }
+</script>
+
+    <header>
+      <div class="golovna">
+        <a href="index.html"> <img src="img/головна.png" alt="головна"></a>      </div>
+    </header>
+
+    
+
+    </section>
+
+    
+    
+  </main>
+
+  <footer>
+    <p>Мій інтернет магазик &copy; 2023. Всі права захищені.</p>
+    <nav>
+      <ul>
+        <li><a href="#">Про нас</a></li>
+        <li><a href="#">Правила користування</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,3 +222,4 @@
   </footer>
 </body>
 </html>
+
