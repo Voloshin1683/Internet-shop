@@ -2,108 +2,182 @@
 <html>
 <head>
     <link href="style.css" rel="stylesheet"> 
+    
   <title>Мій магазин</title>
   
 </head>
 <body>
    
-
-   
-   
-
   <main>
     <div id="myNavLeft" class="overlay overlay-left">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNavLeft()">×</a>
+      <b href="javascript:void(0)" class="closebtn" onclick="closeNavLeft()">×</b>
       <div class="overlay-content">
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <h3>МЕНЮ</h3>
+        <a href="#">Сорти</a>
+        <a href="#">Про нас</a>
+        <a href="#">Аксесуари</a>
       </div>
     </div>
     
     <div id="myNavRight" class="overlay overlay-right">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">×</a>
+      <b href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">×</b>
       <div class="overlay-content">
-        <div class="cart-item">
-          <img src="img/whitetea.png" alt="Product 1">
-          <h3>Название продукта 1</h3>
-          <p>Цена: $10</p>
-          <p>Количество: 2</p>
-        </div>
-    
-        <div class="cart-item">
-          <img src="product2.jpg" alt="Product 2">
-          <h3>Название продукта 2</h3>
-          <p>Цена: $15</p>
-          <p>Количество: 1</p>
-        </div>
-    
-        <div class="cart-item">
-          <img src="product3.jpg" alt="Product 3">
-          <h3>Название продукта 3</h3>
-          <p>Цена: $20</p>
-          <p>Количество: 3</p>
-        </div>
-        <button class="checkout-button">Оформить заказ</button>
+        <div id="cartItemsContainer"></div>
+        <button class="checkout-button" onclick="redirectToCheckout()">Оформити замовлення</button>
+
       </div>
     </div>
-    
-    
     
     <span class="openbtn openbtn-left" onclick="openNavLeft()"><img src="img/logo.png" alt="Логотип магазина"> </span>
     <span class="openbtn openbtn-right" onclick="openNavRight()"><img src="img/basket.svg" alt="Кошик"></span>
     
-    <script >function openNavLeft() {
-      document.getElementById("myNavLeft").style.width = "252px";
-  }
-  
-  function closeNavLeft() {
-      document.getElementById("myNavLeft").style.width = "0%";
-  }
-  
-  function openNavRight() {
-      document.getElementById("myNavRight").style.width = "18%";
-  }
-  
-  function closeNavRight() {
-      document.getElementById("myNavRight").style.width = "0%";
-  }</script>
-    <header>
-       
-        
-       
-        
-        
-        
-      </header>
-    <section id="products">
-     
-    
-  
-      <div class="product">
-        <img src="img/whitetea.png" alt="Product 1">
-
-        <h3>Чай білий “Тікспай”</h3>
-        <p>Ціна:169UAH|100g</p>
-        <button class="add-to-cart">Додати в кошик</button>
-      </div>
-     
-      <div class="product">
-        <img src="img/greentea.png" alt="Product 2">
-        <h3>Чай зелений з манго</h3>
-        <p>Ціна:129UAH|100g</p>
-        <button class="add-to-cart">Додати в кошик</button>
-      </div>
-  
-      <div class="product">
-        <img src="img/жовтий чай.png" alt="Product 3">
-        <h3>Чай жовтий “Сонячний”</h3>
-        <p>Ціна:139UAH|100g</p>
-        <button class="add-to-cart">Додати в кошик</button>
-      </div>
+    <script>
+      function openNavLeft() {
+        document.getElementById("myNavLeft").style.width = "252px";
+      }
       
+      function closeNavLeft() {
+        document.getElementById("myNavLeft").style.width = "0%";
+      }
+      
+      function openNavRight() {
+        document.getElementById("myNavRight").style.width = "18%";
+      }
+      
+      function closeNavRight() {
+        document.getElementById("myNavRight").style.width = "0%";
+      }
+      function redirectToCheckout() {
+  // Перенаправлення на нову сторінку для введення даних покупця
+  window.location.href = "checkout.html";
+}
 
+    </script>
+
+    <header>
+      <div class="golovna">
+        <a href="index.html"> <img src="img/logo.png" alt="головна"></a>
+      </div>
+    </header>
+
+    <section id="products">
+      <div class="product">
+        <a href="білий.html"> <img src=img/whitetea.png></a>
+        <h3>Чай білий “Тікспай”</h3>
+        <p>Ціна: 169UAH | 100g</p>
+        <button class="add-to-cart" onclick="addToCart('Чай білий “Тікспай”', '169UAH | 100g', 'img/whitetea.png')">Додати в кошик</button>
+      </div>
+
+     <!-- Решта товарів -->
+
+<div class="product">
+  <a href="зелений.html"> <img src="img/greentea.png"></a>
+  <h3>Чай зелений з манго</h3>
+  <p>Ціна: 129UAH | 100g</p>
+  <button class="add-to-cart" onclick="addToCart('Чай зелений з манго', '129UAH | 100g', 'img/greentea.png')">Додати в кошик</button>
+</div>
+
+<div class="product">
+  <a href="жовтий.html"> <img src="img/жовтий чай.png"></a>
+  <h3>Чай жовтий “Сонячний”</h3>
+  <p>Ціна: 139UAH | 100g</p>
+  <button class="add-to-cart" onclick="addToCart('Чай жовтий “Сонячний”', '139UAH | 100g', 'img/жовтий чай.png')">Додати в кошик</button>
+</div>
+
+<div class="product">
+  <a href="улун.html"> <img src="img/улун чай.png"></a>
+  <h3>Чай "Улун"</h3>
+  <p>Ціна: 119UAH | 100g</p>
+  <button class="add-to-cart" onclick="addToCart('Чай Улун', '119UAH | 100g', 'img/улун чай.png')">Додати в кошик</button>
+</div>
+
+<div class="product">
+  <a href="чорний.html"> <img src="img/чорний чай.png"></a>
+  <h3>Чай чорний "Ніч"</h3>
+  <p>Ціна: 109UAH | 100g</p>
+  <button class="add-to-cart" onclick="addToCart('Чай чорний Ніч', '109UAH | 100g', 'img/чорний чай.png')">Додати в кошик</button>
+</div>
+
+<div class="product">
+  <a href="пуер.html"> <img src="img/пуер чай.png"></a>
+  <h3>Чай "Пуер"</h3>
+  <p>Ціна: 149UAH | 100g</p>
+  <button class="add-to-cart" onclick="addToCart('Чай Пуер', '149UAH | 100g', 'img/пуер чай.png')">Додати в кошик</button>
+</div>
+
+    </section>
+
+    <script>
+      var cartItems = [];
+
+      function addToCart(name, price, imageSrc) {
+        var existingCartItem = cartItems.find(item => item.name === name);
+
+        if (existingCartItem) {
+          existingCartItem.quantity += 1;
+        } else {
+          cartItems.push({
+            name: name,
+            price: price,
+            imageSrc: imageSrc,
+            quantity: 1
+          });
+        }
+
+        updateCartDisplay();
+        alert('Товар ' + name + ' додано в кошик!');
+      }
+
+      function removeFromCart(index) {
+        cartItems.splice(index, 1);
+        updateCartDisplay();
+      }
+
+      function increaseQuantity(index) {
+        cartItems[index].quantity += 1;
+        updateCartDisplay();
+      }
+
+      function decreaseQuantity(index) {
+        if (cartItems[index].quantity > 1) {
+          cartItems[index].quantity -= 1;
+          updateCartDisplay();
+        }
+      }
+
+      function updateCartDisplay() {
+        var cartItemsContainer = document.getElementById('cartItemsContainer');
+        cartItemsContainer.innerHTML = '';
+
+        cartItems.forEach(function (item, index) {
+          var cartItem = document.createElement('div');
+          cartItem.classList.add('cart-item');
+
+          cartItem.innerHTML = `
+            <img src="${item.imageSrc}" alt="Product">
+            <h3>${item.name}</h3>
+            <p>${item.price}</p>
+            <p>${item.quantity} шт</p>
+            <button onclick="increaseQuantity(${index})">+</button>
+            <button onclick="decreaseQuantity(${index})">-</button>
+            <button onclick="removeFromCart(${index})">Видалити</button>
+          `;
+
+          cartItemsContainer.appendChild(cartItem);
+        });
+      }
+
+      var checkoutButton = document.getElementsByClassName('checkout-button')[0];
+      checkoutButton.addEventListener('click', checkout);
+
+      function checkout() {
+        cartItems = [];
+        updateCartDisplay();
+        alert('Замовлення оформлено!');
+      }
+      
+    </script>
+    
   </main>
 
   <footer>

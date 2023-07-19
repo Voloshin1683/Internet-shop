@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="/font/RobotoMono-Light.woff">
+  <title>Мій магазин</title>
+  
+</head>
+<body>
+   
+
+   
+   
+
+  <main>
+    <div id="myNavLeft" class="overlay overlay-left">
+      <b href="javascript:void(0)" class="closebtn" onclick="closeNavLeft()">×</b>
+      <div class="overlay-content">
+        <h3>МЕНЮ</h3>
+        <a href="#">Сорти</a>
+        <a href="#">Про нас</a>
+        <a href="#">Аксесуари</a>
+      </div>
+    </div>
+    
+    <div id="myNavRight" class="overlay overlay-right">
+      <b href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">×</b>
+      <div class="overlay-content">
+        <div class="cart-item">
+          <img src="img/whitetea.png" alt="Product 1">
+          <h3>Чай білий “Тікспай”</h3>
+          <p>Ціна:169UAH|100g</p>
+          <p>1шт</p>
+        </div>
+    
+        <button class="checkout-button">Оформити замовлення</button>
+      </div>
+       
+    </div>
+    
+    
+    
+    <span class="openbtn openbtn-left" onclick="openNavLeft()"><img src="img/logo.png" alt="Логотип магазина"> </span>
+    <span class="openbtn openbtn-right" onclick="openNavRight()"><img src="img/basket.svg" alt="Кошик"></span>
+    
+    <script >function openNavLeft() {
+      document.getElementById("myNavLeft").style.width = "252px";
+  }
+  
+  function closeNavLeft() {
+      document.getElementById("myNavLeft").style.width = "0%";
+  }
+  
+  function openNavRight() {
+      document.getElementById("myNavRight").style.width = "18%";
+  }
+  
+  function closeNavRight() {
+      document.getElementById("myNavRight").style.width = "0%";
+  }</script>
+    <header>
+      <div class="golovna">
+        <a href="index.html"> <img src="img/logo.png" alt="головна"></a>   
+      </header>
+    <section id="productss">
+     
+    
+  
+      <div class="product1">
+        <img src="img/пуер чай.png" alt="Product 6">
+      </div>
+      <div class="text">
+        <h3>Чай "Шен Пуер"</h3>
+        <p>Ціна:149UAH|100g</p>
+        <button class="add-to-cart">Додати в кошик</button>
+      </div>
+       <div class="text1">
+           <p>
+               Шен пуер - різновид китайського чаю пуер, званий також зеленим або сирим пуером. Його ферментація протікає за участю цвілевих грибів аспергілл і здійснюється за традиційною, вивіреною роками технологією. Для шен пуера характерний відносно світлий чайний настій з властивими фруктовими і пряними нотами. Міцний смак бадьорить і пробуджує.
+           </p>
+
+           <p>
+               Як заварювати шен пуер?
+               3 - 5 г на 150 мл води температурою 95-100°С. Китайський чай пуер слід промивати, тобто зливати перший чайний настій відразу після заварювання. Це сприяє кращому розкриттю чайного листа, а також промиває його від можливого чайного пилу. При наступних проливаннях час заварювання становить 10-30 секунд.
+           </p>
+      </div>
+     
+      
+
+  </main>
+
+  <footer>
+    <p>Мій інтернет магазик &copy; 2023. Всі права захищені.</p>
+    <nav>
+      <ul>
+        <li><a href="#">Про нас</a></li>
+        <li><a href="#">Правила користування</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
