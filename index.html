@@ -5,12 +5,12 @@
     
   <title>Мій магазин</title>
   
+
 </head>
 <body>
    
   <main>
     <div id="myNavLeft" class="overlay overlay-left">
-      <b href="javascript:void(0)" class="closebtn" onclick="closeNavLeft()">×</b>
       <div class="overlay-content">
         <h3>МЕНЮ</h3>
         <a href="#">Сорти</a>
@@ -20,7 +20,6 @@
     </div>
     
     <div id="myNavRight" class="overlay overlay-right">
-      <b href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">×</b>
       <div class="overlay-content">
         <div id="cartItemsContainer"></div>
         <button class="checkout-button" onclick="redirectToCheckout()">Оформити замовлення</button>
@@ -28,16 +27,34 @@
       </div>
     </div>
     
-    <span class="openbtn openbtn-left" onclick="openNavLeft()"><img src="img/logo.png" alt="Логотип магазина"> </span>
-    <span class="openbtn openbtn-right" onclick="openNavRight()"><img src="img/basket.svg" alt="Кошик"></span>
+    <span class="openbtn openbtn-left" onclick="toggleLeftNav()"><img src="img/logo.png" alt="Логотип магазина"> </span>
+    <span class="openbtn openbtn-right" onclick="toggleRightNav()"><img src="img/basket.svg" alt="Кошик"></span>
     
     <script>
+      function toggleLeftNav() {
+        var navLeft = document.getElementById("myNavLeft");
+        if (navLeft.style.width === "252px") {
+          closeNavLeft();
+        } else {
+          openNavLeft();
+        }
+      }
+      
       function openNavLeft() {
         document.getElementById("myNavLeft").style.width = "252px";
       }
       
       function closeNavLeft() {
         document.getElementById("myNavLeft").style.width = "0%";
+      }
+      
+      function toggleRightNav() {
+        var navRight = document.getElementById("myNavRight");
+        if (navRight.style.width === "18%") {
+          closeNavRight();
+        } else {
+          openNavRight();
+        }
       }
       
       function openNavRight() {
@@ -47,16 +64,16 @@
       function closeNavRight() {
         document.getElementById("myNavRight").style.width = "0%";
       }
+      
       function redirectToCheckout() {
-  // Перенаправлення на нову сторінку для введення даних покупця
-  window.location.href = "checkout.html";
-}
-
+        // Перенаправлення на нову сторінку для введення даних покупця
+        window.location.href = "checkout.html";
+      }
     </script>
 
     <header>
       <div class="golovna">
-        <a href="index.html"> <img src="img/logo.png" alt="головна"></a>
+        <a href="index.html"> <img src="img/головна.png" alt="головна"></a>
       </div>
     </header>
 
@@ -72,16 +89,16 @@
 
 <div class="product">
   <a href="зелений.html"> <img src="img/greentea.png"></a>
-  <h3>Чай зелений з манго</h3>
+  <h3>Чай зелений Білочунь Равлики Весни</h3>
   <p>Ціна: 129UAH | 100g</p>
-  <button class="add-to-cart" onclick="addToCart('Чай зелений з манго', '129UAH | 100g', 'img/greentea.png')">Додати в кошик</button>
+  <button class="add-to-cart" onclick="addToCart('Чай зелений Білочунь Равлики Весни', '129UAH | 100g', 'img/greentea.png')">Додати в кошик</button>
 </div>
 
 <div class="product">
   <a href="жовтий.html"> <img src="img/жовтий чай.png"></a>
-  <h3>Чай жовтий “Сонячний”</h3>
+  <h3>Чай жовтий “Анчан”</h3>
   <p>Ціна: 139UAH | 100g</p>
-  <button class="add-to-cart" onclick="addToCart('Чай жовтий “Сонячний”', '139UAH | 100g', 'img/жовтий чай.png')">Додати в кошик</button>
+  <button class="add-to-cart" onclick="addToCart('Чай жовтий Анчан', '139UAH | 100g', 'img/жовтий чай.png')">Додати в кошик</button>
 </div>
 
 <div class="product">
@@ -93,91 +110,114 @@
 
 <div class="product">
   <a href="чорний.html"> <img src="img/чорний чай.png"></a>
-  <h3>Чай чорний "Ніч"</h3>
+  <h3>Чай чорний "Дянь Хун"</h3>
   <p>Ціна: 109UAH | 100g</p>
-  <button class="add-to-cart" onclick="addToCart('Чай чорний Ніч', '109UAH | 100g', 'img/чорний чай.png')">Додати в кошик</button>
+  <button class="add-to-cart" onclick="addToCart('Чай чорний Дянь Хун', '109UAH | 100g', 'img/чорний чай.png')">Додати в кошик</button>
 </div>
 
 <div class="product">
   <a href="пуер.html"> <img src="img/пуер чай.png"></a>
-  <h3>Чай "Пуер"</h3>
+  <h3>Чай "Шен Пуер"</h3>
   <p>Ціна: 149UAH | 100g</p>
-  <button class="add-to-cart" onclick="addToCart('Чай Пуер', '149UAH | 100g', 'img/пуер чай.png')">Додати в кошик</button>
+  <button class="add-to-cart" onclick="addToCart('Чай Шен Пуер', '149UAH | 100g', 'img/пуер чай.png')">Додати в кошик</button>
 </div>
 
     </section>
 
     <script>
-      var cartItems = [];
-
-      function addToCart(name, price, imageSrc) {
-        var existingCartItem = cartItems.find(item => item.name === name);
-
-        if (existingCartItem) {
-          existingCartItem.quantity += 1;
-        } else {
-          cartItems.push({
-            name: name,
-            price: price,
-            imageSrc: imageSrc,
-            quantity: 1
-          });
-        }
-
-        updateCartDisplay();
-        alert('Товар ' + name + ' додано в кошик!');
-      }
-
-      function removeFromCart(index) {
-        cartItems.splice(index, 1);
-        updateCartDisplay();
-      }
-
-      function increaseQuantity(index) {
-        cartItems[index].quantity += 1;
-        updateCartDisplay();
-      }
-
-      function decreaseQuantity(index) {
-        if (cartItems[index].quantity > 1) {
-          cartItems[index].quantity -= 1;
-          updateCartDisplay();
-        }
-      }
-
-      function updateCartDisplay() {
-        var cartItemsContainer = document.getElementById('cartItemsContainer');
-        cartItemsContainer.innerHTML = '';
-
-        cartItems.forEach(function (item, index) {
-          var cartItem = document.createElement('div');
-          cartItem.classList.add('cart-item');
-
-          cartItem.innerHTML = `
-            <img src="${item.imageSrc}" alt="Product">
-            <h3>${item.name}</h3>
-            <p>${item.price}</p>
-            <p>${item.quantity} шт</p>
-            <button onclick="increaseQuantity(${index})">+</button>
-            <button onclick="decreaseQuantity(${index})">-</button>
-            <button onclick="removeFromCart(${index})">Видалити</button>
-          `;
-
-          cartItemsContainer.appendChild(cartItem);
+          var cartItems = [];
+    
+    function addToCart(name, price, imageSrc) {
+      var existingCartItem = cartItems.find(item => item.name === name);
+  
+      if (existingCartItem) {
+        existingCartItem.quantity += 1;
+      } else {
+        cartItems.push({
+          name: name,
+          price: price,
+          imageSrc: imageSrc,
+          quantity: 1
         });
       }
-
-      var checkoutButton = document.getElementsByClassName('checkout-button')[0];
-      checkoutButton.addEventListener('click', checkout);
-
-      function checkout() {
-        cartItems = [];
+  
+      updateCartDisplay();
+      alert('Товар ' + name + ' додано в кошик!');
+  
+      // Зберегти кошик у localStorage
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+  
+    function removeFromCart(index) {
+      cartItems.splice(index, 1);
+      updateCartDisplay();
+  
+      // Оновити збережений кошик у localStorage
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+  
+    function increaseQuantity(index) {
+      cartItems[index].quantity += 1;
+      updateCartDisplay();
+  
+      // Оновити збережений кошик у localStorage
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+  
+    function decreaseQuantity(index) {
+      if (cartItems[index].quantity > 1) {
+        cartItems[index].quantity -= 1;
         updateCartDisplay();
-        alert('Замовлення оформлено!');
+  
+        // Оновити збережений кошик у localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
       }
-      
+    }
+  
+    function updateCartDisplay() {
+      var cartItemsContainer = document.getElementById('cartItemsContainer');
+      cartItemsContainer.innerHTML = '';
+  
+      cartItems.forEach(function (item, index) {
+        var cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+  
+        cartItem.innerHTML = `
+          <img src="${item.imageSrc}" alt="Product">
+          <h3>${item.name}</h3>
+          <p>${item.price}</p>
+          <p>${item.quantity} шт</p>
+          <button class="increase-button" onclick="increaseQuantity(${index})">+</button>
+          <button class="decrease-button" onclick="decreaseQuantity(${index})">-</button>
+          <button class="remove-button" onclick="removeFromCart(${index})">Видалити</button>
+        `;
+  
+        cartItemsContainer.appendChild(cartItem);
+      });
+    }
+  
+    // При завантаженні сторінки перевірити наявність збережених товарів у localStorage
+    window.addEventListener('DOMContentLoaded', function () {
+      var savedCartItems = localStorage.getItem('cartItems');
+  
+      if (savedCartItems) {
+        cartItems = JSON.parse(savedCartItems);
+        updateCartDisplay();
+      }
+    });
+  
+    var checkoutButton = document.getElementsByClassName('checkout-button')[0];
+    checkoutButton.addEventListener('click', checkout);
+  
+    function checkout() {
+      cartItems = [];
+      updateCartDisplay();
+      alert('Замовлення оформлено!');
+  
+      // Очистити збережений кошик у localStorage
+      localStorage.removeItem('cartItems');
+    }
     </script>
-    
   </main>
 
   <footer>
